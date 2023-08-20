@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string CodigBrush(int I, int F, const string & frase);
+int main() {
+    int I, F;
+    string texto;
+
+    cout << "Ingrese el número de inicio (I): ";
+    cin >> I;
+
+    cout << "Ingrese el número final (F): ";
+    cin >> F;
+
+   
+    while (cin.get() != '\n');
+
+    cout << "Ingrese el texto: ";
+    getline(cin, texto);
+
+    string resultado = CodigBrush(I, F, texto);
+    
+    cout << "Texto resultante: " << resultado << endl;
+
+    return 0;
+}
+string CodigBrush(int I, int F, const string & frase) {
+    if (I < 0 || F >= frase.length() || I >= F) {
+        return frase;
+    }
+    string result = frase;
+    reverse(result.begin() + I, result.begin() + F + 1);
+    return result;
+}
+
